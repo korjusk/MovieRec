@@ -8,8 +8,8 @@ My past movie ratings and MovieLens Datasets are an informative signal.
 
 ##### Data
 My IMDb [ratings](https://www.imdb.com/user/ur15834927/ratings) and
-MovieLens 20m [dataset](http://files.grouplens.org/datasets/movielens/ml-20m.zip) 
-and dataset [readme.](http://files.grouplens.org/datasets/movielens/ml-20m-README.html)  
+MovieLens 20m [dataset.](http://files.grouplens.org/datasets/movielens/ml-20m.zip) 
+([readme](http://files.grouplens.org/datasets/movielens/ml-20m-README.html))  
 
 ##### Hypothesis test
 [FastaAi's](https://docs.fast.ai/collab.html) collaborative filtering model.  
@@ -73,13 +73,13 @@ Plotting 500 most popular movie genres and genres from the movies that I have ra
 ![plt_genre_barh.png](images/plt_genre_barh.png)
 
 * Over half of the movies that I have rated are 'Drama'
+* I have avoided 'Musicals'
 * I don't like 'Film-Noir' (film marked by a mood of pessimism, fatalism, and menace). 
 * I should watch more 'War' movies.
-* I have avoided 'Musicals'
 
 #### Movie Age
 Do I prefer old movies or new?  
-'Move age' 0 means that I rated the movie the same year it was released.
+'Movie age' 0 means that I rated the movie the same year it was released.
 
 ![plt_age_plot.png](images/plt_age_plot.png)
 * 1/3 movies are up to 2 years old
