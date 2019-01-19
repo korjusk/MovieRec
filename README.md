@@ -41,7 +41,6 @@ There is 2% change that randomly sorted movies are correctly predicted. (8+ good
 ## Data analysis
 
 In between 2007 and 2015 I rated 497 movies in IMDb.  
-(The first was 'The Shawshank Redemption' with maximum rating.)
 
 MovieLens dataset contains 20000263 ratings across 27278 movies. These data were created by 138493 users between 1995 and 2015.
 Users were selected at random and all of them had rated at least 20 movies.
@@ -61,14 +60,17 @@ To compare my ratings with MovieLens ratings I used 5-star scale, with one-star 
 #### Most popular movies
 Not to be confused with best/highest rated movies.
 
-1. Pulp Fiction (1994)
-2. Forrest Gump (1994)
-3. The Shawshank Redemption (1994)
-4. The Silence of the Lambs (1991)
-5. Jurassic Park (1993)
+| Movie                    | Year | View count |
+|--------------------------|:----:|-----------:|
+| Pulp Fiction             | 1994 |      67310 |
+| Forrest Gump             | 1994 |      66172 |
+| The Shawshank Redemption | 1994 |      63366 |
+| The Silence of the Lambs | 1991 |      63299 |
+| Jurassic Park            | 1994 |      59715 |
 
 #### Genres
-Plotting 500 most popular movie genres and genres from the movies that I have rated.
+Plotting 500 most popular movie genres and genres from the movies that I have rated.  
+Keep in mind that one movie could have multiple different genres.
 
 ![plt_genre_barh.png](images/plt_genre_barh.png)
 
