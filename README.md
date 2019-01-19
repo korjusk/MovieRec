@@ -28,18 +28,22 @@ In the top 10 of the most promising movies there should be:
 
 ##### Example
 100 randomly sorted movies  
-![random.png](images/random.png)  
+
+![list_random.png](images/list_random.png)  
 
 Ideal output from model: movies sorted from worst to best.  
-![ideal.png](images/ideal.png)  
+
+![list_ideal.png](images/list_ideal.png)  
 
 Only the last 10 (highly recommended) movies have to be correctly predicted.  
-There is 2% change that randomly sorted movies are correctly predicted. (8+ good, 0 bad)
+There is 2% probability that randomly sorted movies are correctly predicted. (8+ good, 0 bad)
 
 ##### Baseline prediction
 Hypothesis: My taste in movies is same as general population taste. So I should watch movies with highest ratings.  
-Here are randomly selected 100 movies order from lowest IMDb rating to the best.
+Here are randomly selected 100 movies ordered from lowest IMDb rating to the best.  
+![list_imdb.png](images/list_imdb.png)  
 
+Better than random but not good enough.
 
 ##### Possible complication
 * Diversity  
