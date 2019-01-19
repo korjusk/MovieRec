@@ -1,7 +1,10 @@
 # MovieRec
 
 ##### Goal 
-Personal movie recommendations system.
+I want to find good movies to watch.
+
+##### The problem 
+The problem is best framed as unidimensional regression, which predicts how much I'm going to like a certain movie.
 
 ##### Hypothesis
 My past movie ratings and MovieLens Datasets are an informative signal.  
@@ -11,9 +14,6 @@ My IMDb [ratings](https://www.imdb.com/user/ur15834927/ratings) and
 MovieLens 20m [dataset.](http://files.grouplens.org/datasets/movielens/ml-20m.zip) 
 ([readme](http://files.grouplens.org/datasets/movielens/ml-20m-README.html))  
 
-##### Hypothesis test
-[FastaAi's](https://docs.fast.ai/collab.html) collaborative filtering model.  
-
 ##### Success definition
 Final test is with 100 randomly selected Never-Before-Seen movies 
 that I have rated. The model is going predict the order of these movies from worst to best.  
@@ -22,7 +22,7 @@ In the top 10 of the most promising movies there should be:
 * 0 bad movies
 
 ##### Terms
-![](images/green.png) Good movie - 9 stars or more out of 10. (my personal rating)  
+![](images/green.png) Good movie - movies that I rated 9 stars or more out of 10.  
 ![](images/yellow.png) Average movie  
 ![](images/red.png) Bad movie =< 4 stars  
 
@@ -30,12 +30,26 @@ In the top 10 of the most promising movies there should be:
 100 randomly sorted movies  
 ![random.png](images/random.png)  
 
-Ideal output from model
+Ideal output from model: movies sorted from worst to best.  
 ![ideal.png](images/ideal.png)  
 
 Only the last 10 (highly recommended) movies have to be correctly predicted.  
 There is 2% change that randomly sorted movies are correctly predicted. (8+ good, 0 bad)
 
+##### Baseline prediction
+Hypothesis: My taste in movies is same as general population taste. So I should watch movies with highest ratings.  
+Here are randomly selected 100 movies order from lowest IMDb rating to the best.
+
+
+##### Possible complication
+* Diversity  
+Example: Model will reccomend only 'war' movies.  
+
+* Changing preferences  
+The first movie I rated was from 2007. My taste in movies might now be different.  
+
+* Old dataset  
+The newest movie in dataset is from 2015. The model is going to reccomend only old movies.  
 
 &nbsp;
 ## Data analysis
@@ -90,6 +104,7 @@ Do I prefer old movies or new?
 &nbsp;
 ## Collaborative filtering
 &nbsp;
+To solve the problem I'm going to try [FastaAi's](https://docs.fast.ai/collab.html) collaborative filtering which is a method of making automatic predictions (filtering) about the interests of a user by collecting preferences or taste information from many users (collaborating). For user taste information I'm only going to use ratings. Later I might use genres, movie age and realease date aswell.  
 ...
 
 ### Code
