@@ -28,18 +28,17 @@ In the top 10 of the most promising movies there should be:
 
 ##### Example
 100 randomly sorted movies  
-
 ![list_random.png](images/list_random.png)  
 
 Ideal output from model: movies sorted from worst to best.  
-
 ![list_ideal.png](images/list_ideal.png)  
 
 Only the last 10 (highly recommended) movies have to be correctly predicted.  
 There is 2% probability that randomly sorted movies are correctly predicted. (8+ good, 0 bad)
 
 ##### Baseline prediction
-Hypothesis: My taste in movies is same as general population taste. So I should watch movies with highest ratings.  
+Hypothesis: My taste in movies is same as general population taste. So I should watch movies with highest ratings. 
+
 Here are randomly selected 100 movies ordered from lowest IMDb rating to the best.  
 ![list_imdb.png](images/list_imdb.png)  
 
@@ -108,7 +107,9 @@ Do I prefer old movies or new?
 &nbsp;
 ## Collaborative filtering
 &nbsp;
+
 To solve the problem I'm going to try [FastaAi's](https://docs.fast.ai/collab.html) collaborative filtering which is a method of making automatic predictions (filtering) about the interests of a user by collecting preferences or taste information from many users (collaborating). For user taste information I'm only going to use ratings. Later I might use genres, movie age and realease date aswell.  
+
 ...
 
 ### Code
