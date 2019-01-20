@@ -134,12 +134,13 @@ No Country for Old Men (2007)|4.0|10248|1.0
 Plotting 500 most popular movie genres and genres from the movies that I have rated.  
 Keep in mind that one movie could have multiple different genres.
 
-![plt_genre_barh.png](images/plt_genre_barh.png)
-
-* Over half of the movies that I have rated are 'Drama'
-* I have avoided 'Musicals'
-* I don't like 'Film-Noir' (film marked by a mood of pessimism, fatalism, and menace). 
-* I should watch more 'War' movies.
+![plt_genre_barh.png](images/plt_genre_barh.png)  
+In top 500 movies there were 32 movies with 'War' genre.  
+I'v rated 29 movies with 'War' genre, 16 of them as good and 13 of them as average.  
+The 29 movies mean rating is 4.3 witch makes 'War' highest rated genre.  
+But most of the movies I've watched are 'Drama' (297 out of 497).  
+  
+I have avoided 'Musicals' and I don't like 'Film-Noir' (film marked by a mood of pessimism, fatalism, and menace).
 
 
 #### Movie Age
