@@ -186,30 +186,37 @@ To speed up the training I'm going to filter my data. I take
 10x faster.  
 
 Now I have a 15m dataset where every user has rated at least 100 movies and every movie has been rated at least ~400 times. 
-
+15m dataset is seperated in to training, validation, and test set.  
+* Test set - 100 ratings, all from me.  
+* Validation set - 1.5m ratings, ~40 from me. 
+* Train set - 13.5m ratings, ~360 from me.
+  
 ## Result
 
 After only 2 epochs (0.5 hours training) the results are pretty good:  
 Mean Absolute Error(MAE) = 0.599  
 Mean Squared Error (MSE) = 0.624  
-Training Set MSE = 0.619  
 
 
-If the model predicts that I would rate the movie 7 stars out of 10, on average, I would give 5.8-8.2 stars to the movie. Not good, but I'm going to focus on the most recommended movies. When the model predicts that I would rate the movie 9.5 stars then there's a really high chance that I'm going to rate it with at least 9 stars.
+If the model predicts that I would rate the movie 7 stars out of 10, on average, I would give 5.8-8.2 stars to the movie. Not good, but I'm going to focus on the most recommended movies. When the model predicts that I would rate the movie 9.5 stars then there's a really high chance that I'm going to rate it with at least 9 stars.  
 So let's look at the performance on the final test with 100 Never-Before-Seen movies:  
 
 ![final_test.png](images/final_test.png)  
   
 The model predicted that the last 10 movies I would rate at least 8.8 stars and in reality, I rated 9 movies out of 10 with 9+ stars and only 1 movie was rated 8 stars. So the model is very precise.
 
-When I trained 20 epochs with extra small (2m) dataset then the MSE was 0.5 so there's room for improvements.
-
-### Production
+### Production  
 
 To speed up the training I'm going to select 10m ratings.
-I'm not going to use a test set and for validation I'm going to use only 1% of total data. 
+I'm not going to use a test set and for validation, I'm going to use only 1% of total data. 
 And I'm going to train it for 10 epochs.  
+Result: 0.55 MSE  
+I have seen 73 movies out of the top 100 most recommended movies.
+And the movies that I haven't seen:
 
+### Most reccomended movies  
+
+<a href="https://www.imdb.com/title/tt0289992"><img src="https://m.media-amazon.com/images/M/MV5BMTAxMzU0NTgxNzZeQTJeQWpwZ15BbWU2MDQzNDkxNw@@._V1_UX182_CR0,0,182,268_AL_.jpg"></a><a href="https://www.imdb.com/title/tt0105323"><img src="https://m.media-amazon.com/images/M/MV5BZTM3ZjA3NTctZThkYy00ODYyLTk2ZjItZmE0MmZlMTk3YjQwXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_UX182_CR0,0,182,268_AL_.jpg"></a><a href="https://www.imdb.com/title/tt0185906"><img src="https://m.media-amazon.com/images/M/MV5BMTI3ODc2ODc0M15BMl5BanBnXkFtZTYwMjgzNjc3._V1_UX182_CR0,0,182,268_AL_.jpg"></a><a href="https://www.imdb.com/title/tt0277027"><img src="https://m.media-amazon.com/images/M/MV5BYzEyNzc0NjctZjJiZC00MWI1LWJlOTMtYWZkZDAzNzQ0ZDNkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg"></a><a href="https://www.imdb.com/title/tt0119174"><img src="https://m.media-amazon.com/images/M/MV5BZGVmMDNmYmEtNGQ2Mi00Y2ZhLThhZTYtYjE5YmQzMjZiZGMxXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UY268_CR3,0,182,268_AL_.jpg"></a><a href="https://www.imdb.com/title/tt0095765"><img src="https://m.media-amazon.com/images/M/MV5BM2FhYjEyYmYtMDI1Yy00YTdlLWI2NWQtYmEzNzAxOGY1NjY2XkEyXkFqcGdeQXVyNTA3NTIyNDg@._V1_UX182_CR0,0,182,268_AL_.jpg"></a><a href="https://www.imdb.com/title/tt0099077"><img src="https://m.media-amazon.com/images/M/MV5BMjI5NjEzMDYyMl5BMl5BanBnXkFtZTgwNjgwNTg4NjE@._V1_UY268_CR9,0,182,268_AL_.jpg"></a><a href="https://www.imdb.com/title/tt0223897"><img src="https://m.media-amazon.com/images/M/MV5BNjI3ODI5NDEwMl5BMl5BanBnXkFtZTYwNDYyMjU3._V1_UX182_CR0,0,182,268_AL_.jpg"></a>
 
 
 ### Code
