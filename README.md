@@ -189,10 +189,10 @@ Now I have a 15m dataset where every user has rated at least 100 movies and ever
 
 ## Result
 
-After only 2 epochs (0.5 hours training) the results are pretty good:
-Mean Absolute Error(MAE) = 0.599
-Mean Squared Error (MSE) = 0.624
-Training Set MSE = 0.619
+After only 2 epochs (0.5 hours training) the results are pretty good:  
+Mean Absolute Error(MAE) = 0.599  
+Mean Squared Error (MSE) = 0.624  
+Training Set MSE = 0.619  
 
 
 If the model predicts that I would rate the movie 7 stars out of 10, on average, I would give 5.8-8.2 stars to the movie. Not good, but I'm going to focus on the most recommended movies. When the model predicts that I would rate the movie 9.5 stars then there's a really high chance that I'm going to rate it with at least 9 stars.
@@ -207,7 +207,7 @@ When I trained 20 epochs with extra small (2m) dataset then the MSE was 0.5 so t
 ### Production
 
 To speed up the training I'm going to select 10m ratings.
-I'm not going to use a test nor a validation set. All of the movies I and other rated will be in the training dataset.
+I'm not going to use a test set and for validation I'm going to use only 1% of total data. 
 And I'm going to train it for 10 epochs.  
 
 
