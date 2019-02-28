@@ -181,25 +181,36 @@ y_range = (0.0, 5.5)
 To speed up the training I'm going to filter my data. I take  
 19% (5004 out of 26744) of most popular movies and  
 63% (87099 out of 138494) of the most active user ratings. That's  
-75% (14959080 out of 20000760) of the whole data. Now my movies x users matrix is about  
+75% (14959080 out of 20000760) of the whole data. Resulting movies x users matrix is about  
 10x smaller (5004×87099=0.4e9 vs 26744×138494=4e9) which means that the training is about  
 10x faster.  
 
-Now I have a 15m dataset where every user has rated at least 100 movies and every movie has been rated at least ~400 times.  
+Now I have a 15m dataset where every user has rated at least 100 movies and every movie has been rated at least ~400 times. 
 
-### Result
-After xxx epoch and xxx hours of training:  
-Mean Absolute Error(MAE) = 0.xxx  
-Mean Squared Error (MSE) = 0.xxx  
+## Result
 
-If the model predicts that I would rate the movie 7 stars out of 10, in reality, I would give xx-xx stars to the movie.
-
-
+After only 2 epochs (0.5 hours training) the results are pretty good:
+Mean Absolute Error(MAE) = 0.599
+Mean Squared Error (MSE) = 0.624
+Training Set MSE = 0.619
 
 
+If the model predicts that I would rate the movie 7 stars out of 10, on average, I would give 5.8-8.2 stars to the movie. Not good, but I'm going to focus on the most recommended movies. When the model predicts that I would rate the movie 9.5 stars then there's a really high chance that I'm going to rate it with at least 9 stars.
+So let's look at the performance on the final test with 100 Never-Before-Seen movies:  
+
+![final_test.png](images/final_test.png)  
+  
+The model predicted that the last 10 movies I would rate at least 8.8 stars and in reality, I rated 9 movies out of 10 with 9+ stars and only 1 movie was rated 8 stars. So the model is very precise.
+
+When I trained 20 epochs with extra small (2m) dataset then the MSE was 0.5 so there's room for improvements.
+
+### Production
+
+To speed up the training I'm going to select 10m ratings.
+I'm not going to use a test nor a validation set. All of the movies I and other rated will be in the training dataset.
+And I'm going to train it for 10 epochs.  
 
 
-...
 
 ### Code
 Pyton [notebook](https://github.com/korjusk/MovieRec/blob/master/MovieRec.ipynb) in 
